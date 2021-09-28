@@ -1,36 +1,33 @@
 package com.sparta.sortmanager;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class SortManagerMain {
 
     public static void main(String[] args) {
-        System.out.println("Enter a value to choose a sort");
+        SortManagerView.SortView();
+
         Scanner val1 = new Scanner((System.in));
-        int choice = val1.nextInt();
-        int[] unsortedArray = generateIntArray(choice);
+        Scanner val2 = new Scanner((System.in));
+        String choice1 = val1.next();
+        int choice2 = val2.nextInt();
+        int[] unsortedArray = GenerateArray.generateIntArray(choice2);
         SortChoice sorting = null;
-        switch (choice){
-            case 1:
+        switch (choice1){
+            case "ArrayList":
             sorting = new BubbleSort();
         }
-        int[] BubbleSortedArr= BubbleSort.Sort(unsortedArray);
-
-
-    }
-
-    public static int[] generateIntArray(int arrayLength) {
-        int[] myArr = new int[arrayLength];
-        Random r = new Random();
-        for (int i = 0; i < arrayLength; i++) {
-            myArr[i] = r.nextInt(100);
+        int[] SortedArr= sorting.Sort(unsortedArray);
+        for(int number: SortedArr){
+            System.out.print(number + ", ");
         }
-        return myArr;
-    }
 
-    public void Output(int[] Unsorted){
-        System.out.println("Unsorted Array: " + Unsorted);
 
     }
+
+
+
+
 }
