@@ -1,5 +1,6 @@
 package com.sparta.sortmanager;
 
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class SortManagerController {
@@ -42,9 +43,12 @@ public class SortManagerController {
     public void chooseSort(){
         Scanner val1 = new Scanner((System.in));
         Scanner val2 = new Scanner((System.in));
-        this.setChoice1(val1.next());
-        this.setChoice2(val2.nextInt());
-        this.setUnsortedArray(GenerateArray.generateIntArray(this.getChoice2()));
+
+            this.setChoice1(val1.next());
+            this.setChoice2(val2.nextInt());
+            this.setUnsortedArray(GenerateArray.generateIntArray(this.getChoice2()));
+
+
 
     }
 }
