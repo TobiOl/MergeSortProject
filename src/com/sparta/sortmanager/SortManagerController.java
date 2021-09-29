@@ -13,6 +13,9 @@ public class SortManagerController {
         this.unsortedArray = unsortedArray;
     }
 
+    public SortManagerController() {
+    }
+
     public String getChoice1() {
         return choice1;
     }
@@ -39,8 +42,9 @@ public class SortManagerController {
     public void chooseSort(){
         Scanner val1 = new Scanner((System.in));
         Scanner val2 = new Scanner((System.in));
-        setChoice1(val1.next());
-        setChoice2(val2.nextInt());
-        setUnsortedArray(GenerateArray.generateIntArray(choice2));
+        this.setChoice1(val1.next());
+        this.setChoice2(val2.nextInt());
+        this.setUnsortedArray(GenerateArray.generateIntArray(this.getChoice2()));
+
     }
 }
