@@ -4,13 +4,22 @@ import java.util.Arrays;
 
 public class SortManagerView {
     public static void SortView(){
-        System.out.println("Enter a value to choose a sort");
+        SortManagerController SMC = new SortManagerController();
+        System.out.println("Choose a sorting algorithm");
+        SMC.chooseSort();
+        SortChoice sorting = null;
+        switch (SMC.getChoice1()){
+            case "ArrayList":
+                sorting = new BubbleSort();
+        }
+        int[] SortedArr= sorting.Sort(SMC.getUnsortedArray());
 
-        //PrintOutput(unsortedArray, SortedArr);
+        PrintOutput(SMC.getUnsortedArray(), SortedArr);
     }
 
     public static void PrintOutput(int[] Unsorted, int[] SortedArr){
-        System.out.println("Unsorted Array: " + Arrays.toString(Unsorted));
-        System.out.println("Sorted Array: " + Arrays.toString(SortedArr));
+        for(int number: SortedArr){
+            System.out.print(number + ", ");
+        }
     }
 }
