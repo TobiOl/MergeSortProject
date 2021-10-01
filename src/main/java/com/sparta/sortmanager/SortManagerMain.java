@@ -1,8 +1,6 @@
 package com.sparta.sortmanager;
 
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import com.sparta.sortmanager.view.SortManagerView;
 
 public class SortManagerMain {
 
