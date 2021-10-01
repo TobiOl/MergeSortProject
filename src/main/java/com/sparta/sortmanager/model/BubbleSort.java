@@ -1,4 +1,6 @@
-package com.sparta.sortmanager;
+package com.sparta.sortmanager.model;
+
+import com.sparta.sortmanager.controller.SortManagerController;
 
 public class BubbleSort implements SortChoice{
     private long totalTime;

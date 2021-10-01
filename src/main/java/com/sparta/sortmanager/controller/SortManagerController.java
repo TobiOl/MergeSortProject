@@ -1,6 +1,8 @@
-package com.sparta.sortmanager;
+package com.sparta.sortmanager.controller;
 
-import java.text.ParseException;
+import com.sparta.sortmanager.model.GenerateArray;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SortManagerController {
@@ -12,6 +14,7 @@ public class SortManagerController {
         this.choice1 = choice1;
         this.choice2 = choice2;
         this.unsortedArray = unsortedArray;
+
     }
 
     public SortManagerController() {
@@ -40,15 +43,21 @@ public class SortManagerController {
         this.unsortedArray = unsortedArray;
     }
 
-    public void chooseSort(){
-        Scanner val1 = new Scanner((System.in));
-        Scanner val2 = new Scanner((System.in));
-
-            this.setChoice1(val1.next());
-            this.setChoice2(val2.nextInt());
-            this.setUnsortedArray(GenerateArray.generateIntArray(this.getChoice2()));
+        public void SortValStore(String val1, int val2){
 
 
+        this.setChoice1(val1);
+        this.setChoice2(val2);
+        this.setUnsortedArray(GenerateArray.generateIntArray(this.getChoice2()));
 
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "SortManagerController{" +
+                "unsortedArray=" + Arrays.toString(unsortedArray) +
+                '}';
     }
 }
