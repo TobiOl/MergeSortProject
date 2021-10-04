@@ -17,7 +17,8 @@ public class SortManagerView {
         String sortChoice = null;
         int userArraySize = 0;
         SortManagerController SMC = new SortManagerController();
-        System.out.println("Choose a sorting algorithm");
+        System.out.println("Choose a sorting algorithm.");
+        System.out.println("BubbleSort, MergeSort, QuickSort, TreeSort, InsertionSort");
         try{
             Scanner input = new Scanner((System.in));
             sortChoice = input.next();
@@ -52,8 +53,11 @@ public class SortManagerView {
                 break;
             case "TreeSort":
                 sorting = new BinaryTreeSort();
-                logger.warn("Loading QuickSort algorithm...");
+                logger.info("Loading TreeSort algorithm...");
                 break;
+            case "InsertionSort":
+                sorting = new InsertionSort();
+                logger.info("Loading InsertionSort algorithm...");
         }
         //copies the array over so it doesnt change the original
         int[] unsortedArray = SMC.getUnsortedArray();
