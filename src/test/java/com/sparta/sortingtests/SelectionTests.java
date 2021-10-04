@@ -1,26 +1,24 @@
 package com.sparta.sortingtests;
 
-import com.sparta.sortmanager.model.InsertionSort;
-
+import com.sparta.sortmanager.model.SelectionSort;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class InsertionTests {
-    InsertionSort insertionSort = new InsertionSort();
+public class SelectionTests {
+    SelectionSort selectionSort = new SelectionSort();
     @Test
-    public void testMergeSortWorks(){
+    public void testQuickSortWorks(){
 
         int[] testArray = {5,2,89,43,1};
-        int[] result = insertionSort.Sort(testArray);
+        int[] result = selectionSort.Sort(testArray);
         int[] expectedResult = {1,2,5,43,89};
         assertArrayEquals(expectedResult,result);
     }
-
     @Test
     public void testNanoTimeGetterWorks(){
-        insertionSort.setTotalTime(500);
-        assertEquals(500, insertionSort.SortNanoTime());
+        selectionSort.setTotalTime(500);
+        assertEquals(500, selectionSort.SortNanoTime());
     }
 }
