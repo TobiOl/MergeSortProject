@@ -11,7 +11,6 @@ public class ControllerTests {
         SortManagerController smc = new SortManagerController();
         smc.setUserSortChoice("BubbleSort");
         smc.setUserArraySize(20);
-        smc.setUnsortedArray(GenerateArray.generateIntArray(20));
         assertTrue(smc.getUserSortChoice().equals("BubbleSort"));
         assertTrue(smc.getUserArraySize() == 20);
     }

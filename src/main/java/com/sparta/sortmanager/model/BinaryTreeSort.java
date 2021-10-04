@@ -24,18 +24,17 @@ class Tree{
         if(node == null){
             return new Node(value);
         }
-        // Move to the left if passed value is
-        // less than the current node
+        // Move to the left if passed value is less than the current node
         if(value < node.value){
             node.left = insert(node.left, value);
         }
-        // Move to the right if passed value is
-        // greater than the current node
+        // Move to the right if passed value is greater than the current node
         else if(value > node.value){
             node.right = insert(node.right, value);
         }
         return node;
     }
+    //makes the arraylist an array and returns
     public int[] createIntArrayFromBST(Tree bTree) {
         if (arrayList == null) {
             arrayList = new ArrayList<>();
@@ -44,7 +43,7 @@ class Tree{
         return arrayList.stream().mapToInt(i->i).toArray();
     }
 
-    // For traversing in order
+    // traverses in order and adds to the arraylist to make the tree.
     public void inOrder(Node node){
         if(node != null){
             inOrder(node.left);

@@ -18,13 +18,13 @@ public class SortManagerView {
         int userArraySize = 0;
         SortManagerController SMC = new SortManagerController();
         System.out.println("Choose a sorting algorithm.");
-        System.out.println("BubbleSort, MergeSort, QuickSort, TreeSort, InsertionSort");
+        System.out.println("BubbleSort, MergeSort, QuickSort, TreeSort, InsertionSort, SelectionSort");
         try{
             Scanner input = new Scanner((System.in));
             sortChoice = input.next();
-            logger.debug("User has entered " + sortChoice + " as their first value");
+            logger.info("User has entered " + sortChoice + " as their first value");
             userArraySize = input.nextInt();
-            logger.debug("User has entered " + userArraySize + " as their second value");
+            logger.info("User has entered " + userArraySize + " as their second value");
             SMC.SortValStore(sortChoice, userArraySize);
 
         } catch (NullPointerException npe){
@@ -36,20 +36,20 @@ public class SortManagerView {
             logger.error("User has entered mismatched value types. A string was expected for the first and an int for the second.");
         }
         System.out.println("Chosen sorting algorithm is: " + SMC.getUserSortChoice());
-
+        //uses switch statement to assign sorting to the chosen sort class
         SortChoice sorting = null;
         switch (SMC.getUserSortChoice()){
             case "BubbleSort":
                 sorting = new BubbleSort();
-                logger.warn("Loading BubbleSort algorithm...");
+                logger.info("Loading BubbleSort algorithm...");
                 break;
             case "MergeSort":
                 sorting = new MergeSort();
-                logger.warn("Loading MergeSort algorithm...");
+                logger.info("Loading MergeSort algorithm...");
                 break;
             case "QuickSort":
                 sorting = new QuickSort();
-                logger.warn("Loading QuickSort algorithm...");
+                logger.info("Loading QuickSort algorithm...");
                 break;
             case "TreeSort":
                 sorting = new BinaryTreeSort();
@@ -76,6 +76,7 @@ public class SortManagerView {
         PrintOutput(unsortedCopyNum, sortedArr, endTime);
     }
 
+    //prints out sorted, unsorted, and time completion
     public static void PrintOutput(int[] Unsorted, int[] SortedArr, long endTime){
         String repeat;
         logger.warn("Printing final results");
@@ -94,6 +95,7 @@ public class SortManagerView {
         Scanner input = new Scanner((System.in));
         repeat = input.next();
         if (repeat.equals("Y")||repeat.equals("y")){
+            //lets the user repeat the program
             SortView();
         }
         else{
