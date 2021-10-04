@@ -3,6 +3,7 @@ package com.sparta.sortmanager.controller;
 import com.sparta.sortmanager.model.GenerateArray;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class SortManagerController {
     private String userSortChoice;
@@ -43,15 +44,17 @@ public class SortManagerController {
     }
 
         public void SortValStore(String val1, int val2){
-
-
+        Random random = new Random();
         this.setUserSortChoice(val1);
         this.setUserArraySize(val2);
-        this.setUnsortedArray(GenerateArray.generateIntArray(this.getUserArraySize()));
+
+        this.setUnsortedArray(GenerateArray.generateIntArray(this.getUserArraySize(), random));
 
 
 
     }
+
+
 
     @Override
     public String toString() {
