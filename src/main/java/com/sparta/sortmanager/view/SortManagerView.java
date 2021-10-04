@@ -18,7 +18,7 @@ public class SortManagerView {
         int userArraySize = 0;
         SortManagerController SMC = new SortManagerController();
         System.out.println("Choose a sorting algorithm.");
-        System.out.println("BubbleSort, MergeSort, QuickSort, TreeSort, InsertionSort");
+        System.out.println("BubbleSort, MergeSort, QuickSort, TreeSort, InsertionSort, SelectionSort");
         try{
             Scanner input = new Scanner((System.in));
             sortChoice = input.next();
