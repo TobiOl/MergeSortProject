@@ -1,5 +1,4 @@
 package com.sparta.sortingtests;
-import com.sparta.sortmanager.model.MergeSort;
 import com.sparta.sortmanager.model.QuickSort;
 import org.junit.jupiter.api.Test;
 

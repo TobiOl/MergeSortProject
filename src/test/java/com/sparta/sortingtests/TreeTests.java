@@ -1,6 +1,6 @@
 package com.sparta.sortingtests;
 import com.sparta.sortmanager.model.BinaryTreeSort;
-import com.sparta.sortmanager.model.QuickSort;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

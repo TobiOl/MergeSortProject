@@ -58,6 +58,9 @@ public class SortManagerView {
             case "InsertionSort":
                 sorting = new InsertionSort();
                 logger.info("Loading InsertionSort algorithm...");
+            case "SelectionSort":
+                sorting = new SelectionSort();
+                logger.info("Loading SelectionSort algorithm...");
         }
         //copies the array over so it doesnt change the original
         int[] unsortedArray = SMC.getUnsortedArray();
