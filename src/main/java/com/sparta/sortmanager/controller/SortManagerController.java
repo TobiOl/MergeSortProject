@@ -3,16 +3,15 @@ package com.sparta.sortmanager.controller;
 import com.sparta.sortmanager.model.GenerateArray;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class SortManagerController {
-    private String choice1;
-    private int choice2;
+    private String userSortChoice;
+    private int userArraySize;
     private int[] unsortedArray;
 
-    public SortManagerController(String choice1, int choice2, int[] unsortedArray) {
-        this.choice1 = choice1;
-        this.choice2 = choice2;
+    public SortManagerController(String userSortChoice, int userArraySize, int[] unsortedArray) {
+        this.userSortChoice = userSortChoice;
+        this.userArraySize = userArraySize;
         this.unsortedArray = unsortedArray;
 
     }
@@ -20,19 +19,19 @@ public class SortManagerController {
     public SortManagerController() {
     }
 
-    public String getChoice1() {
-        return choice1;
+    public String getUserSortChoice() {
+        return userSortChoice;
     }
 
-    public void setChoice1(String choice1) {
-        this.choice1 = choice1;
+    public void setUserSortChoice(String userSortChoice) {
+        this.userSortChoice = userSortChoice;
     }
-    public int getChoice2() {
-        return choice2;
+    public int getUserArraySize() {
+        return userArraySize;
     }
 
-    public void setChoice2(int choice2) {
-        this.choice2 = choice2;
+    public void setUserArraySize(int userArraySize) {
+        this.userArraySize = userArraySize;
     }
 
     public int[] getUnsortedArray() {
@@ -46,9 +45,9 @@ public class SortManagerController {
         public void SortValStore(String val1, int val2){
 
 
-        this.setChoice1(val1);
-        this.setChoice2(val2);
-        this.setUnsortedArray(GenerateArray.generateIntArray(this.getChoice2()));
+        this.setUserSortChoice(val1);
+        this.setUserArraySize(val2);
+        this.setUnsortedArray(GenerateArray.generateIntArray(this.getUserArraySize()));
 
 
 
