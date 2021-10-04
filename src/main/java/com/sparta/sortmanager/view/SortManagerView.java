@@ -14,17 +14,17 @@ public class SortManagerView {
     public static void SortView(){
         PropertyConfigurator.configure("logfj.properties");
         long endTime;
-        String val1 = null;
-        int val2 = 0;
+        String sortChoice = null;
+        int userArraySize = 0;
         SortManagerController SMC = new SortManagerController();
         System.out.println("Choose a sorting algorithm");
         try{
             Scanner input = new Scanner((System.in));
-            val1 = input.next();
-            logger.warn("User has entered " + val1 + " as their first value");
-            val2 = input.nextInt();
-            logger.warn("User has entered " + val2 + " as their second value");
-            SMC.SortValStore(val1, val2);
+            sortChoice = input.next();
+            logger.debug("User has entered " + sortChoice + " as their first value");
+            userArraySize = input.nextInt();
+            logger.debug("User has entered " + userArraySize + " as their second value");
+            SMC.SortValStore(sortChoice, userArraySize);
 
         } catch (NullPointerException npe){
             System.err.println("Null detected!");
@@ -34,10 +34,10 @@ public class SortManagerView {
             System.err.println("Input mismatch detected! Use letters for the first entry and numbers for the second only!");
             logger.error("User has entered mismatched value types. A string was expected for the first and an int for the second.");
         }
-        System.out.println("Chosen sorting algorithm is: " + SMC.getChoice1());
+        System.out.println("Chosen sorting algorithm is: " + SMC.getUserSortChoice());
 
         SortChoice sorting = null;
-        switch (SMC.getChoice1()){
+        switch (SMC.getUserSortChoice()){
             case "BubbleSort":
                 sorting = new BubbleSort();
                 logger.warn("Loading BubbleSort algorithm...");
@@ -58,8 +58,8 @@ public class SortManagerView {
         //copies the array over so it doesnt change the original
         int[] unsortedArray = SMC.getUnsortedArray();
         int [] unsortedCopy = SMC.getUnsortedArray();
-        int[] unsortedCopyNum = new int[SMC.getChoice2()];
-        System.arraycopy(unsortedArray, 0, unsortedCopyNum, 0, SMC.getChoice2());
+        int[] unsortedCopyNum = new int[SMC.getUserArraySize()];
+        System.arraycopy(unsortedArray, 0, unsortedCopyNum, 0, SMC.getUserArraySize());
         SMC.setUnsortedArray(unsortedCopyNum);
 
         int[] sortedArr= sorting.Sort(unsortedCopy);//sends the copy to be sorted
